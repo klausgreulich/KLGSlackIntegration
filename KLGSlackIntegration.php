@@ -30,10 +30,10 @@ KLGSlackIntegration
 		return self::$instance;
 	}
 	
-	public function sendSimpleMessage($message)
+	public function sendMessage($message)
 	{
-		$this->setMessage($message);
-		$this->sendMessage();
+		$this->setMessage($message)
+		$this->send();
 	}
 	
 	public function setMessage($message)
@@ -41,7 +41,12 @@ KLGSlackIntegration
 		$this->message = $message;
 	}
 	
-	public function sendMessage()
+	public function send()
+	{
+		$this->_sendMessageToSlack();	
+	}
+	
+	private function _sendMessageToSlack()
 	{
 	
 	}
